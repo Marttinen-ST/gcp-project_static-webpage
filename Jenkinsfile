@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        GOOGLE_APPLICATION_CREDENTIALS = credentials('gcp-service-account') // GCP service account credentials ID
+        GOOGLE_APPLICATION_CREDENTIALS = credentials('102236748793185860302')
     }
     stages {
         stage('Checkout Code') {

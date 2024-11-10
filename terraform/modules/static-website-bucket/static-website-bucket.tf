@@ -9,6 +9,11 @@ resource "google_storage_bucket" "static_website" {
   }
 
   uniform_bucket_level_access = true
+
+  website {
+    main_page_suffix = "index.html"
+    not_found_page = "404.html"
+  }
 }
 
 # Upload a simple index.html page to the bucket

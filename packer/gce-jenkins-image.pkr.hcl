@@ -46,12 +46,20 @@ build {
       "sudo DEBIAN_FRONTEND=noninteractive apt-get install -y apache2",
       "sudo systemctl start apache2",
       "sleep 10",
+      "echo \"*****************####################*****************\"",
+      "echo \"*****************INSTALLING TERRAFORM*****************\"",
+      "echo \"*****************####################*****************\"",
+      "sudo DEBIAN_FRONTEND=noninteractive apt-get install -y gnupg software-properties-common",
+      "wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg > /dev/null",
+      "gpg --no-default-keyring --keyring /usr/share/keyrings/hashicorp-archive-keyring.gpg --fingerprint",
+      "echo deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main | sudo tee /etc/apt/sources.list.d/hashicorp.list",
+      "sudo DEBIAN_FRONTEND=noninteractive apt-get update",
+      "sudo DEBIAN_FRONTEND=noninteractive apt-get install -y terraform"
       "echo \"*****************##################*****************\"",
       "echo \"*****************INSTALLING JENKINS*****************\"",
       "echo \"*****************##################*****************\"",
       "sudo DEBIAN_FRONTEND=noninteractive apt-get install -y jenkins", 
-      "sudo systemctl enable jenkins", 
-      "sudo systemctl start jenkins"]
+      "sudo systemctl enable jenkins"]
   }
 
 }

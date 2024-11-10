@@ -11,11 +11,19 @@ pipeline {
                 git branch: 'main', url: 'https://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@github.com/Marttinen-ST/gcp-project_static-webpage.git'
             }
         }
-        stage('Initialize Terraform') {
+        stage('Terraform Init') {
             steps {
                 // Changes directory to the terraform folder and initializes Terraform
                 dir('terraform') {
                     sh 'terraform init'
+                }
+            }
+        }
+        stage('Terraform Plan') {
+            steps {
+                // Changes directory to the terraform folder and initializes Terraform
+                dir('terraform') {
+                    sh 'terraform plan'
                 }
             }
         }

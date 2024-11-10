@@ -8,7 +8,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 // Clones the repository
-                git branch: 'main', url: 'https://${GIT_TOKEN}@github.com/Marttinen-ST/gcp-project_static-webpage.git'
+                git branch: 'main', url: 'https://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@github.com/Marttinen-ST/gcp-project_static-webpage.git'
             }
         }
         stage('Initialize Terraform') {

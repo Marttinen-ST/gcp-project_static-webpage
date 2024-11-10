@@ -15,7 +15,7 @@ resource "google_storage_bucket" "tfstate-bucket" {
 }
 
 terraform {
-    backend "gcs-bucket" {
+    backend "gcs" {
       bucket = var.tfstate_bucket
       prefix = "terraform/state"
       project = var.project_id

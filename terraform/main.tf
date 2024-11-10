@@ -18,6 +18,5 @@ terraform {
     backend "gcs" {
       bucket = "test-env-tfstate"
       prefix = "terraform/state"
-      project = "long-sum-441213-v5"
     }
 }

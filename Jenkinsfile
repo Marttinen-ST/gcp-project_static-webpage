@@ -1,13 +1,14 @@
 pipeline {
     agent any
     environment {
-        GOOGLE_APPLICATION_CREDENTIALS = credentials('102236748793185860302')
+        GOOGLE_APPLICATION_CREDENTIALS = credentials('gcp-service-account')
+        GIT_TOKEN = credentials('git-token')
     }
     stages {
         stage('Checkout Code') {
             steps {
                 // Clones the repository
-                git branch: 'main', url: 'https://github.com/Marttinen-ST/gcp-project_static-webpage.git'
+                git branch: 'main', url: 'https://${GIT_TOKEN}@github.com/Marttinen-ST/gcp-project_static-webpage.git'
             }
         }
         stage('Initialize Terraform') {

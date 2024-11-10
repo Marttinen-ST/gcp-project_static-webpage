@@ -9,3 +9,9 @@ variable "gcp_region" {
   type        = string
   default     = "us-central1"
 }
+
+variable "hosting_bucket" {
+  description = "Bucket name that will host the static website"
+  type = string
+  default = "rga-test-website-host"
+}

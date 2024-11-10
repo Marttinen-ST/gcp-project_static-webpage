@@ -9,3 +9,9 @@ terraform {
       prefix = "terraform/state"
     }
 }
+
+module "static-website-bucket" {
+    source = "./modules/static-website-bucket"
+    hosting_bucket = var.hosting_bucket
+    gcp_region = var.gcp_region
+}

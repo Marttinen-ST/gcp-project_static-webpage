@@ -16,8 +16,8 @@ resource "google_storage_bucket" "tfstate-bucket" {
 
 terraform {
     backend "gcs" {
-      bucket = var.tfstate_bucket
+      bucket = "test-env-tfstate"
       prefix = "terraform/state"
-      project = var.project_id
+      project = "long-sum-441213-v5"
     }
 }

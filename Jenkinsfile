@@ -47,7 +47,7 @@ pipeline {
             steps {
                 // Changes directory to the terraform folder and initializes Terraform
                 dir('code') {
-                    sh 'gsutil -m rm -r gs://rga-test-website-host/*'
+                    sh 'gsutil -m rm -r gs://rga-test-website-host/**'
                 }
             }
         }

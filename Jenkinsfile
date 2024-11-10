@@ -27,6 +27,14 @@ pipeline {
                 }
             }
         }
+        stage('Terraform Apply with auto approve') {
+            steps {
+                // Changes directory to the terraform folder and initializes Terraform
+                dir('terraform') {
+                    sh 'terraform apply -auto-approve'
+                }
+            }
+        }
     }
     post {
         always {

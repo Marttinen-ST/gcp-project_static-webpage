@@ -19,22 +19,6 @@ pipeline {
                 }
             }
         }
-        stage('Plan Terraform') {
-            steps {
-                // Changes directory to the terraform folder and generates an execution plan
-                dir('terraform') {
-                    sh 'terraform plan -out=tfplan'
-                }
-            }
-        }
-        stage('Apply Terraform') {
-            steps {
-                // Changes directory to the terraform folder and applies the Terraform configuration
-                dir('terraform') {
-                    sh 'terraform apply -auto-approve tfplan'
-                }
-            }
-        }
     }
     post {
         always {

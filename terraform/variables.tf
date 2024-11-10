@@ -9,9 +9,3 @@ variable "gcp_region" {
   type        = string
   default     = "us-central1"
 }
-
-variable "tfstate_bucket" {
-  description = "Bucket name that will store the tfstate file"
-  type        = string
-  default     = "test-env-tfstate"
-}

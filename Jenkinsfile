@@ -35,6 +35,30 @@ pipeline {
                 }
             }
         }
+        stage('Yarn Build') {
+            steps {
+                // Changes directory to the terraform folder and initializes Terraform
+                dir('terraform') {
+                    sh 'terraform apply -auto-approve'
+                }
+            }
+        }
+        stage('Cleaning up bucket') {
+            steps {
+                // Changes directory to the terraform folder and initializes Terraform
+                dir('code') {
+                    sh 'gsutil -m rm -r gs://rga-test-website-host/*'
+                }
+            }
+        }
+        stage('Coping new content') {
+            steps {
+                // Changes directory to the terraform folder and initializes Terraform
+                dir('code/build') {
+                    sh 'gsutil -m cp -r * gs://rga-test-website-host/'
+                }
+            }
+        }
     }
     post {
         always {

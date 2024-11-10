@@ -13,3 +13,11 @@ resource "google_storage_bucket" "tfstate-bucket" {
   }
   uniform_bucket_level_access = true
 }
+
+terraform {
+    backend "gcs-bucket" {
+      bucket = var.tfstate_bucket
+      prefix = "terraform/state"
+      project = var.project_id
+    }
+}

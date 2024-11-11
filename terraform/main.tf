@@ -16,8 +16,8 @@ terraform {
 #     gcp_region = var.gcp_region
 # }
 
-module "static-website-lb" {
-    source = "./modules/static-website-lb"
-    hosting_bucket = var.hosting_bucket
-    gcp_region = var.gcp_region
-}
+# module "static-website-lb" {
+#     source = "./modules/static-website-lb"
+#     hosting_bucket = var.hosting_bucket
+#     gcp_region = var.gcp_region
+# }

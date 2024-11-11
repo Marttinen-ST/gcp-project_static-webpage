@@ -8,7 +8,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 // Clones the repository
-                sh "git clone https://${env.GIT_TOKEN_PSW}@github.com/Marttinen-ST/gcp-project_static-webpage.git"
+                sh 'git clone https://$GIT_TOKEN_PSW@github.com/Marttinen-ST/gcp-project_static-webpage.git'
             }
         }
         stage('Terraform Init') {

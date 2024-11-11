@@ -39,8 +39,8 @@ pipeline {
             steps {
                 // Changes directory to the terraform folder and initializes Terraform
                 dir('code') {
-                    // sh 'yarn install'
-                    // sh 'yarn build'
+                    sh 'yarn install'
+                    sh 'yarn build'
                 }
             }
         }
@@ -48,7 +48,8 @@ pipeline {
             steps {
                 // Changes directory to the terraform folder and initializes Terraform
                 dir('code') {
-                    sh 'gsutil -m rm -r gs://rga-test-website-host/**'
+                    sh 'gcloud auth activate-service-account --key-file=/var/lib/jenkins/long-sum-441213-v5-2df2b21e07ed.json'
+                    sh 'gcloud storage rm gs://rga-test-website-host/*'
                 }
             }
         }

@@ -3,11 +3,6 @@ resource "google_storage_bucket" "static_website" {
   location      = var.gcp_region
   force_destroy = false
   storage_class = "STANDARD"
-
-  versioning {
-    enabled = true
-  }
-
   uniform_bucket_level_access = true
 
   website {

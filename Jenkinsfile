@@ -35,11 +35,12 @@ pipeline {
                 }
             }
         }
-        stage('Yarn Build') {
+        stage('Yarn Install and Build') {
             steps {
                 // Changes directory to the terraform folder and initializes Terraform
                 dir('code') {
-                    sh 'yarn build'
+                    // sh 'yarn install'
+                    // sh 'yarn build'
                 }
             }
         }

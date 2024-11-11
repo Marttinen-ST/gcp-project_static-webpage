@@ -8,6 +8,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 // Clones the repository
+                sh 'rm -r gcp-project_static-webpage/'
                 sh 'git clone https://$GIT_TOKEN_PSW@github.com/Marttinen-ST/gcp-project_static-webpage.git'
             }
         }

@@ -7,10 +7,10 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Welcome to GCP static website test
+          Welcome to Automaticaly deployed GCP 
         </p>
         <p>
-          Used React just as example
+          Static Website Test
         </p>
       </header>
     </div>

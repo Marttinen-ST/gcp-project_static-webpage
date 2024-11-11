@@ -38,8 +38,8 @@ pipeline {
         stage('Yarn Build') {
             steps {
                 // Changes directory to the terraform folder and initializes Terraform
-                dir('terraform') {
-                    sh 'terraform apply -auto-approve'
+                dir('code') {
+                    sh 'yarn build'
                 }
             }
         }
@@ -47,8 +47,7 @@ pipeline {
             steps {
                 // Changes directory to the terraform folder and initializes Terraform
                 dir('code') {
-                    // sh 'gsutil -m rm -r gs://rga-test-website-host/**'
-                    sh 'gcloud auth list'
+                    sh 'gsutil -m rm -r gs://rga-test-website-host/**'
                 }
             }
         }

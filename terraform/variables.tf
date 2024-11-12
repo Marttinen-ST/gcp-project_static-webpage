@@ -12,6 +12,6 @@ variable "gcp_region" {
 
 variable "hosting_bucket" {
   description = "Bucket name that will host the static website"
-  type = string
-  default = "rga-test-website-host"
+  type        = string
+  default     = "rga-test-website-host"
 }

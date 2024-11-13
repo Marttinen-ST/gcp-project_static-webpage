@@ -1,4 +1,4 @@
-## gcp-project_static-webpage
+## gcp-project_static-website
 
 ### GCP Project with terraform and react to host static website in cloud object store + Packer script to build Jenkins CI server
 
